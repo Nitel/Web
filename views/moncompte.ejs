@@ -1,1 +1,50 @@
-PAPAPAPAPAP
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript">
+        setTimeout(function sunrise () {
+            document.getElementsByClassName('header')[0].style.backgroundColor = '#118798';
+        }, 0);
+    </script>
+</head>
+
+<body>
+<div class="default-page">
+    <div class="header">
+        <h1 id="main-title" class="container">Mon compte</h1>
+    </div>
+    <div class="main container clearfix">
+        <p><%= user.avatar %></p>
+        <h2>Informations relatives à votre compte:</h2>
+        <br />
+        <p> Email </p>
+        <p><%= user.email %></p>
+        <p> Adress </p>
+        <p><%= user.adresse %></p>
+        <p> Post code </p>
+        <p><%= user.codepostal %></p>
+        <p> City </p>
+        <p><%= user.ville %></p>
+        <br /><br />
+        <h2>Edit : </h2>
+        <br />
+        <form method="POST" action="/user/<%= user.id %>">
+            <p> avatar </p>
+            <input type="text" name="">
+            <p> email </p>
+            <input type="email" name="email">
+            <p> adress </p>
+            <input type="text" name="adresse">
+            <p> post code </p>
+            <input type="number" name="codepostal">
+            <p> city</p>
+            <input type="text" name="ville">
+            <br /><br />
+            <input type="submit" value="submit">
+        </form>
+
+        <script src="/js/dependencies/sails.io.js"></script>
+</body>
+
+</html>
