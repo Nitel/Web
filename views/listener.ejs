@@ -1,0 +1,36 @@
+/*function setColor(element, color)
+{
+    element.style.backgroundColor = color;
+}
+function pageLoaded(){
+	var para = document.getElementById("monid");
+	function setColor(mon, color)
+{
+    element.style.backgroundColor = color;
+}
+}*/
+/*function pageLoaded(){
+var element = document.getElementById('element');
+
+element.onclick = function() {
+  element.classList.add('backGroundColor');
+  document.element.onclick = null;
+//  element.onclick(function() {
+ //   element.classList.remove('backGroundColor');
+  //}, 2000);
+};
+};*/
+
+function pageLoaded() {
+	document.body.addEventListener('click', function(e) {
+		var self = e.target;
+		
+		if (typeof self.old_bg != "undefined") {
+			e.target.style.background = self.old_bg;
+			delete(self.old_bg)
+		} else {
+			self.old_bg = e.target.style.background;
+			e.target.style.background = 'black';
+		}
+	});
+}
